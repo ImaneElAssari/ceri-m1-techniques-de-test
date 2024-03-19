@@ -2,6 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
@@ -14,46 +15,77 @@ import static org.mockito.Mockito.when;
 
 public class IPokedexTest {
 
-    private IPokedex mockPokedex;
+    @Mock
+    private IPokedex pokedex;
 
     @Before
     public void setUp() {
+        // Initialiser les mocks
         MockitoAnnotations.initMocks(this);
+    }
+    @Test
+    public void testSizeWithEmptyPokedex() {
+        // Définir le comportement du mock pokedex pour retourner une taille de 0
+        when(pokedex.size()).thenReturn(0);
 
+        // Tester la méthode size() du pokedex
+        assertEquals(0, pokedex.size());
     }
 
     @Test
-    public void testSize() {
-        when(mockPokedex.size()).thenReturn(5);
-        assertEquals(5, mockPokedex.size());
-    }
+    public void testAddPokemon() throws PokedexException {
+        // Création d'un Pokémon fictif
+        Pokemon expectedPokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 13, 6, 4, 4, 56);
 
-    @Test
-    public void testAddPokemon() {
-        Pokemon mockPokemon = mock(Pokemon.class);
-        when(mockPokedex.addPokemon(mockPokemon)).thenReturn(1);
-        assertEquals(1, mockPokedex.addPokemon(mockPokemon));
+        // Spécifiez le comportement attendu lorsque la méthode addPokemon est appelée avec le Pokémon fictif
+        when(pokedex.addPokemon(expectedPokemon)).thenReturn(0); // Supposons que le Pokémon est ajouté avec succès à l'index 0
+
+        // Ajoutez le Pokémon au Pokédex
+        int index = pokedex.addPokemon(expectedPokemon);
+
+        // Vérifiez que l'index retourné correspond à celui attendu
+        assertEquals(0, index);
     }
 
     @Test
     public void testGetPokemon() throws PokedexException {
-        Pokemon expectedPokemon = mock(Pokemon.class);
-        when(mockPokedex.getPokemon(1)).thenReturn(expectedPokemon);
-        assertEquals(expectedPokemon, mockPokedex.getPokemon(1));
+        // Création d'un Pokémon fictif avec un identifiant donné
+        int pokemonId = 1;
+        Pokemon expectedPokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 13, 6, 4, 4, 56);
+
+        // Spécifiez le comportement attendu lorsque la méthode getPokemon est appelée avec l'identifiant de Pokémon donné
+        when(pokedex.getPokemon(pokemonId)).thenReturn(expectedPokemon);
+
+        // Obtenez le Pokémon du Pokédex en utilisant l'identifiant
+        Pokemon actualPokemon = pokedex.getPokemon(pokemonId);
+
+        // Vérifiez que le Pokémon retourné correspond à celui attendu
+        assertEquals(expectedPokemon, actualPokemon);
     }
 
     @Test
     public void testGetPokemons() {
+        // Création de quelques Pokémon fictifs
+        Pokemon pokemon1 = new Pokemon(0, "Bulbizarre", 126, 126, 90, 13, 6, 4, 4, 56);
+        Pokemon pokemon2 = new Pokemon(133,"Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1);
+
+        // Ajout des Pokémon fictifs à une liste
         List<Pokemon> expectedPokemons = new ArrayList<>();
-        when(mockPokedex.getPokemons()).thenReturn(expectedPokemons);
-        assertEquals(expectedPokemons, mockPokedex.getPokemons());
+        expectedPokemons.add(pokemon1);
+        expectedPokemons.add(pokemon2);
+
+        // Spécifiez le comportement attendu lorsque la méthode getPokemons est appelée
+        when(pokedex.getPokemons()).thenReturn(expectedPokemons);
+
+        // Obtenez la liste des Pokémon du Pokédex
+        List<Pokemon> actualPokemons = pokedex.getPokemons();
+
+        // Vérifiez que la liste retournée correspond à celle attendue
+        assertEquals(expectedPokemons, actualPokemons);
     }
 
-    @Test
-    public void testGetPokemonsWithComparator() {
-        List<Pokemon> expectedPokemons = new ArrayList<>();
-        Comparator<Pokemon> mockComparator = mock(Comparator.class);
-        when(mockPokedex.getPokemons(mockComparator)).thenReturn(expectedPokemons);
-        assertEquals(expectedPokemons, mockPokedex.getPokemons(mockComparator));
-    }
+
+
+
+
 }

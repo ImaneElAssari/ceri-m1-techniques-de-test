@@ -34,7 +34,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.2.5</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>

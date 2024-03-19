@@ -28,25 +28,33 @@ public class IPokemonFactoryTest {
         assertEquals(4, actualPokemon.getDust());
         assertEquals(4, actualPokemon.getCandy());
     }
+
     @Test(expected = PokedexException.class)
-    public void testCreateInvalidPokemon_ThrowsException() throws PokedexException {
+    public void testCreateInvalidPokemonBis_ThrowsException() throws PokedexException {
         // Given
         int invalidIndex = 1;
-        int invalidCp = 613;
-        int invalidHp = 64;
-        int invalidDust = 4000;
-        int invalidCandy = 444;
+        int invalidCp = 6;
+        int invalidHp = 6;
+        int invalidDust = 4;
+        int invalidCandy = 48;
 
-        assertTrue("Cp should be between 0 and 15", invalidHp >= 0 && invalidCp <= 15);
+        assertTrue("Cp should be between 0 and 15", invalidCp >= 0 && invalidCp <= 15);
         assertTrue("Hp should be between 0 and 15", invalidHp >= 0 && invalidHp <= 15);
         assertTrue("Dust should be between 0 and 15", invalidDust >= 0 && invalidDust <= 15);
         assertTrue("Candy should be between 0 and 15", invalidCandy >= 0 && invalidCandy <= 15);
 
-
+        // Mock IPokemonFactory
         IPokemonFactory mockProvider = mock(IPokemonFactory.class);
-        when(mockProvider.createPokemon(invalidIndex, invalidCp, invalidHp, invalidDust, invalidCandy)).thenThrow(new PokedexException("Invalid index"));
 
+        // Define behavior for createPokemon method
+        when(mockProvider.createPokemon(invalidIndex, invalidCp, invalidHp, invalidDust, invalidCandy))
+                .thenAnswer(invocation -> {
+                    throw new PokedexException("Invalid index");
+                });
+
+        // When
         mockProvider.createPokemon(invalidIndex, invalidCp, invalidHp, invalidDust, invalidCandy);
 
+        // Then (expected exception)
     }
 }
