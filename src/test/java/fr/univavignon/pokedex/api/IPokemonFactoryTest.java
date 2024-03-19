@@ -36,7 +36,7 @@ public class IPokemonFactoryTest {
         int invalidCp = 6;
         int invalidHp = 6;
         int invalidDust = 4;
-        int invalidCandy = 48;
+        int invalidCandy = 4;
 
         assertTrue("Cp should be between 0 and 15", invalidCp >= 0 && invalidCp <= 15);
         assertTrue("Hp should be between 0 and 15", invalidHp >= 0 && invalidHp <= 15);
