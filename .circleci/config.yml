@@ -1,34 +1,44 @@
 version: 2.1
 
 orbs:
+  maven: circleci/maven@1.4.1
   codecov: codecov/codecov@4.0.1
-  workflows:
-    upload-to-codecov:
-      jobs:
-        - checkout
-        - codecov/upload
-
 
 jobs:
-  build-and-test:
+  build:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:21.0.2
+    steps:
+      - checkout
+
+  test:
+    docker:
+      - image: cimg/openjdk:21.0.2
+    steps:
+      - checkout
+
+  upload-to-codecov:
+    docker:
+      - image: cimg/openjdk:21.0.2
     steps:
       - checkout
       - run:
-          name: Run Maven Test and generate coverage report
-          command: mvn test
+          name: "Tests with JaCoCo coverage"
+          command: mvn clean verify jacoco:report
       - run:
-          name: Upload coverage to Codecov
-          command: bash <(curl -fsSL https://codecov.io/bash)
-
+          name: "Upload to Codecov"
+          command: bash <(curl -s https://codecov.io/bash)
+      - codecov/upload
 
 workflows:
-  version: 2
-  complete-workflow:
+  maven_test:
     jobs:
-      - build-and-test:
+      - build
+      - maven/test:
           filters:
             branches:
-              only: master
-
+              only:
+                - master
+      - upload-to-codecov:
+          requires:
+            - maven/test
