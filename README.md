@@ -1,3 +1,9 @@
+# Imane El Assari 
+
+## M1 IA-ALT
+[![codecov](https://codecov.io/gh/ImaneElAssari/ceri-m1-techniques-de-test/graph/badge.svg?token=VYSB9VE64D)](https://codecov.io/gh/ImaneElAssari/ceri-m1-techniques-de-test)
+
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
