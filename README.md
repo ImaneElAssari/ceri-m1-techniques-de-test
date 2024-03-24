@@ -21,7 +21,7 @@ Installation des dépendances avec Maven
 `mvn install`
 
 5. Après avoir installé les dépendances avec Maven, vous pouvez exécuter les tests JUnit pour votre projet avec la commande
-`mvn test`
+`mvn test`.
 
 
 # UCE Génie Logiciel Avancé : Techniques de tests
