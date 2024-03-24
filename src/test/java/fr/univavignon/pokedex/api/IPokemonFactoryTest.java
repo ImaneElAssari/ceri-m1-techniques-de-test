@@ -52,9 +52,7 @@ public class IPokemonFactoryTest {
                     throw new PokedexException("Invalid index");
                 });
 
-        // When
         mockProvider.createPokemon(invalidIndex, invalidCp, invalidHp, invalidDust, invalidCandy);
 
-        // Then (expected exception)
     }
 }

@@ -16,7 +16,7 @@ public class IPokedexFactoryTest {
     private IPokemonFactory pokemonFactory;
 
     @Mock
-    private IPokedex pokedex; // Mock IPokedex
+    private IPokedex pokedex;
 
     @Mock
     private IPokedexFactory pokedexFactory;
@@ -28,13 +28,10 @@ public class IPokedexFactoryTest {
 
     @Test
     public void testCreatePokedex() {
-        // Définir le comportement du mock pokedexFactory
         Mockito.when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(pokedex);
 
-        // Appeler la méthode à tester
         IPokedex createdPokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
 
-        // Vérifier si la méthode a retourné une instance de IPokedex
         assertNotNull(createdPokedex);
     }
 

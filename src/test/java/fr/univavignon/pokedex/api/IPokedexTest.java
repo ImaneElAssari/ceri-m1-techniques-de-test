@@ -20,7 +20,6 @@ public class IPokedexTest {
 
     @Before
     public void setUp() {
-        // Initialiser les mocks
         MockitoAnnotations.initMocks(this);
     }
     @Test
@@ -37,13 +36,13 @@ public class IPokedexTest {
         // Création d'un Pokémon fictif
         Pokemon expectedPokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 13, 6, 4, 4, 56);
 
-        // Spécifiez le comportement attendu lorsque la méthode addPokemon est appelée avec le Pokémon fictif
+        // Definition du comportement attendu lorsque la méthode addPokemon est appelée avec le Pokémon fictif
         when(pokedex.addPokemon(expectedPokemon)).thenReturn(0); // Supposons que le Pokémon est ajouté avec succès à l'index 0
 
-        // Ajoutez le Pokémon au Pokédex
+        // Ajout Pokémon au Pokédex
         int index = pokedex.addPokemon(expectedPokemon);
 
-        // Vérifiez que l'index retourné correspond à celui attendu
+        // Vérification que l'index retourné correspond à celui attendu
         assertEquals(0, index);
     }
 
@@ -53,13 +52,10 @@ public class IPokedexTest {
         int pokemonId = 1;
         Pokemon expectedPokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 13, 6, 4, 4, 56);
 
-        // Spécifiez le comportement attendu lorsque la méthode getPokemon est appelée avec l'identifiant de Pokémon donné
         when(pokedex.getPokemon(pokemonId)).thenReturn(expectedPokemon);
 
-        // Obtenez le Pokémon du Pokédex en utilisant l'identifiant
         Pokemon actualPokemon = pokedex.getPokemon(pokemonId);
 
-        // Vérifiez que le Pokémon retourné correspond à celui attendu
         assertEquals(expectedPokemon, actualPokemon);
     }
 
@@ -74,13 +70,13 @@ public class IPokedexTest {
         expectedPokemons.add(pokemon1);
         expectedPokemons.add(pokemon2);
 
-        // Spécifiez le comportement attendu lorsque la méthode getPokemons est appelée
+        // Spécification du comportement de la methode getPokemons
         when(pokedex.getPokemons()).thenReturn(expectedPokemons);
 
-        // Obtenez la liste des Pokémon du Pokédex
+        // Liste des Pokémon du Pokédex
         List<Pokemon> actualPokemons = pokedex.getPokemons();
 
-        // Vérifiez que la liste retournée correspond à celle attendue
+        // Vérification que la liste retournée correspond à celle attendue
         assertEquals(expectedPokemons, actualPokemons);
     }
 
