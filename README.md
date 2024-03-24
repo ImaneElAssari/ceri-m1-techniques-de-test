@@ -3,6 +3,8 @@
 ## M1 IA-ALT 
 [![codecov](https://codecov.io/gh/ImaneElAssari/ceri-m1-techniques-de-test/graph/badge.svg?token=VYSB9VE64D)](https://codecov.io/gh/ImaneElAssari/ceri-m1-techniques-de-test)
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/H4ikkREn9g6WzK5JRX6245/H62MfKgRPJS3n3rm1JxSVK/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/H4ikkREn9g6WzK5JRX6245/H62MfKgRPJS3n3rm1JxSVK/tree/main)
+
 
 # UCE Génie Logiciel Avancé : Techniques de tests
 
