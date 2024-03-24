@@ -5,6 +5,25 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/H4ikkREn9g6WzK5JRX6245/H62MfKgRPJS3n3rm1JxSVK/tree/master.svg?style=svg&circle-token=CCIPRJ_FmiTPmBynTRJBiSUcaTNp7_1c163290933a3668c56fea8b3377ca63adc55926)](https://dl.circleci.com/status-badge/redirect/circleci/H4ikkREn9g6WzK5JRX6245/H62MfKgRPJS3n3rm1JxSVK/tree/master)
 
+### Instructions pour l'installation des dépendances avec Maven et l'exécution de tests avec JUnit
+
+Ce document fournit des instructions sur la façon d'installer les dépendances nécessaires à un projet Java à l'aide de Maven et comment exécuter des tests avec JUnit.
+
+Installation des dépendances avec Maven
+
+1. Assurez-vous d'avoir Maven installé sur votre système. Si ce n'est pas le cas, vous pouvez le télécharger et l'installer à partir du [site officiel de Apache Maven](https://maven.apache.org/download.cgi).
+
+2. Clonez ou téléchargez le dépôt de votre projet depuis GitHub ou un autre système de gestion de versions.
+
+3. Ouvrez un terminal ou une invite de commande et naviguez jusqu'au répertoire racine de votre projet.
+
+4. Exécutez la commande suivante pour installer les dépendances du projet à l'aide de Maven 
+`mvn install`
+
+5. Après avoir installé les dépendances avec Maven, vous pouvez exécuter les tests JUnit pour votre projet avec la commande
+`mvn test`
+
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
