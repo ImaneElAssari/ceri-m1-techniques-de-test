@@ -42,3 +42,30 @@ workflows:
       - upload-to-codecov:
           requires:
             - maven/test
+
+
+name: Checkstyle Report
+
+on:
+  push:
+    branches:
+      - main  # À ajuster selon vos besoins
+
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Ajoutez d'autres étapes de construction ici si nécessaire
+
+      - name: Publish Checkstyle report
+        uses: Juuxel/publish-checkstyle-report@v1
+        if: ${{ failure() || success() }}
+        with:
+          # Les chemins globaux vers les fichiers XML de rapport en tant que chaîne multiligne
+          # Le format ci-dessous fonctionne pour le plugin Checkstyle Gradle avec les configurations par défaut
+          reports: |
+            build/reports/checkstyle/*.xml
