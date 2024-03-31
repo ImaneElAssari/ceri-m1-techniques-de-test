@@ -44,25 +44,3 @@ workflows:
             - maven/test
 
 
-name: Checkstyle Report
-
-on:
-  push:
-    branches:
-      - master
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-
-      - name: Publish Checkstyle report
-        uses: Juuxel/publish-checkstyle-report@v1
-        if: ${{ failure() || success() }}
-        with:
-
-          reports: |
-            target/site/checkstyle/*.xml

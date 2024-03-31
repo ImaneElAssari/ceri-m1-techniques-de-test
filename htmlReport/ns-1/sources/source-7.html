@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > IPokemonFactory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">fr.univavignon.pokedex.api</a>
+</div>
+
+<h1>Coverage Summary for Class: IPokemonFactory (fr.univavignon.pokedex.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">IPokemonFactory</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package fr.univavignon.pokedex.api;
+&nbsp;
+&nbsp;/**
+&nbsp; * Factory interface for class that aims to create Pokemon instance.
+&nbsp; * 
+&nbsp; * @author fv
+&nbsp; */
+&nbsp;public interface IPokemonFactory {
+&nbsp;
+&nbsp;	/**
+&nbsp;	 * Creates a pokemon instance computing it IVs.
+&nbsp;	 * 
+&nbsp;	 * @param index Pokemon index.
+&nbsp;	 * @param cp Pokemon CP.
+&nbsp;	 * @param hp Pokemon HP.
+&nbsp;	 * @param dust Required dust for upgrading pokemon.
+&nbsp;	 * @param candy Required candy for upgrading pokemon.
+&nbsp;	 * @return Created pokemon instance.
+&nbsp;	 */
+&nbsp;	Pokemon createPokemon(int index, int cp, int hp, int dust, int candy);
+&nbsp;	
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-03-19 18:14</div>
+</div>
+</body>
+</html>

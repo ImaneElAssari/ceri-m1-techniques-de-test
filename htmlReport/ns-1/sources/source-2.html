@@ -1,0 +1,187 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Pokemon</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">fr.univavignon.pokedex.api</a>
+</div>
+
+<h1>Coverage Summary for Class: Pokemon (fr.univavignon.pokedex.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Pokemon</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package fr.univavignon.pokedex.api;
+&nbsp;
+&nbsp;/**
+&nbsp; * Pokemon POJO.
+&nbsp; * 
+&nbsp; * @author fv
+&nbsp; */
+&nbsp;public final class Pokemon extends PokemonMetadata {
+&nbsp;
+&nbsp;	/** Combat Point of the pokemon. **/
+&nbsp;	private final int cp;
+&nbsp;
+&nbsp;	/** HP of the pokemon. **/
+&nbsp;	private final int hp;
+&nbsp;
+&nbsp;	/** Required dust for upgrading this pokemon. **/
+&nbsp;	private final int dust;
+&nbsp;
+&nbsp;	/** Required candy for upgrading this pokemon. **/
+&nbsp;	private final int candy;
+&nbsp;
+&nbsp;	/** IV perfection percentage. **/
+&nbsp;	private final double iv;
+&nbsp;	
+&nbsp;	/**
+&nbsp;	 * Default constructor.
+&nbsp;	 * 
+&nbsp;	 * @param index Pokemon index.
+&nbsp;	 * @param name Pokemon name.
+&nbsp;	 * @param attack Attack level.
+&nbsp;	 * @param defense Defense level.
+&nbsp;	 * @param stamina Stamina level.
+&nbsp;	 * @param cp Pokemon cp.
+&nbsp;	 * @param hp Pokemon hp.
+&nbsp;	 * @param dust Required dust for upgrading this pokemon.
+&nbsp;	 * @param candy Required candy for upgrading this pokemon.
+&nbsp;	 * @param iv IV perfection percentage.
+&nbsp;	 */
+&nbsp;	public Pokemon(
+&nbsp;			final int index,
+&nbsp;			final String name,
+&nbsp;			final int attack,
+&nbsp;			final int defense,
+&nbsp;			final int stamina,
+&nbsp;			final int cp,
+&nbsp;			final int hp,
+&nbsp;			final int dust,
+&nbsp;			final int candy,
+&nbsp;			final double iv) {
+<b class="nc">&nbsp;		super(index, name, attack, defense, stamina);</b>
+<b class="nc">&nbsp;		this.cp = cp;</b>
+<b class="nc">&nbsp;		this.hp = hp;</b>
+<b class="nc">&nbsp;		this.dust = dust;</b>
+<b class="nc">&nbsp;		this.candy = candy;</b>
+<b class="nc">&nbsp;		this.iv = iv;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	/** Combat Point getter getter. **/
+&nbsp;	public int getCp() {
+<b class="nc">&nbsp;		return cp;</b>
+&nbsp;	}
+&nbsp;	
+&nbsp;	/** HP getter. **/
+&nbsp;	public int getHp() {
+<b class="nc">&nbsp;		return hp;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	/** Dust getter. **/
+&nbsp;	public int getDust() {
+<b class="nc">&nbsp;		return dust;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	/** Candy getter. **/
+&nbsp;	public int getCandy() {
+<b class="nc">&nbsp;		return candy;</b>
+&nbsp;	}
+&nbsp;	
+&nbsp;	/** IV getter. **/
+&nbsp;	public double getIv() {
+<b class="nc">&nbsp;		return iv;</b>
+&nbsp;	}
+&nbsp;	
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-03-19 18:14</div>
+</div>
+</body>
+</html>
