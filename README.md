@@ -9,8 +9,6 @@
 [![Checkstyle](docs/badges/checkstyle-result.svg)](https://htmlpreview.github.io/?https://github.com/ImaneElAssari/ceri-m1-techniques-de-test/blob/master/target/site/checkstyle.html)
 
 
- 
-
 ### Instructions pour l'installation des dépendances avec Maven et l'exécution de tests avec JUnit
 
 Ce document fournit des instructions sur la façon d'installer les dépendances nécessaires à un projet Java à l'aide de Maven et comment exécuter des tests avec JUnit.
