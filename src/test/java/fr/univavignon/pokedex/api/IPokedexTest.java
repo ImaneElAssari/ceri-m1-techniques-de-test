@@ -20,6 +20,7 @@ public class IPokedexTest {
 
     @Before
     public void setUp() {
+        ;
         MockitoAnnotations.initMocks(this);
     }
     @Test
